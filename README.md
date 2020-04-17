@@ -64,7 +64,7 @@ The pipeline manifest looks like this:
 
 The manifest validates against Nic's manifest Relax NG schema, found in his XProc Tools repository.
 
-You'll notice that two of the steps include `meta` elements. These describe input parameters to the respective XSLT steps. Why not call them 'param'? Ask Nic. Pretty sure he did think it through but I can't see it.
+You'll notice that two of the steps include `meta` elements. These describe input parameters to the respective XSLT steps. Why not call them 'param'? Ask Nic. Pretty sure he did think it through but I don't get it (which probably says more about me than him).
 
 
 ## XSLT Steps
