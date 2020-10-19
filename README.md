@@ -10,11 +10,26 @@ This repository contains a test pipeline for XSLT steps, meaning individual XSLT
 * `sources/input.xml` is a single input test XML file
 * `xslt/` contains four XSLT steps
 * `pipelines/` contains a single XML manifest file that defines the test pipeline
+* `xproc-batch/` contains the XProc functionality needed to run the test pipeline; it is included here as a submodule
+* `sh/` contains an example shell script to run the test pipeline
+* `xmlcalabash-1.1.30-99/` contains the XML Calabash 1.1.30-99 XProc 1.0 processor; you're free to use a more recent version, of course, but keep in mind that currently, the XProc implementation requires using XML Calabash and XProc 1.0
 
 
-## Input
+## Running
 
-The input file `input.xml` is this rather unimaginative file:
+To run the test pipeline, open a command line and follow these steps:
+
+1. Enter `cd $ROOT` where `$ROOT` is the path to this repository on your system. Hit RETURN.
+2. Enter `sh/xslt-pipelines.sh $PROJECT true true` where `$PROJECT` contains a folder `sources` where your input XML files live. Hit RETURN. 
+
+NOTE: In this case, `$PROJECT` is the same as `$ROOT` since this repository contains an input test XML file.
+
+The pipeline should run and create a `tmp` folder, inside which it should save the converted file, plus debug information. For details, see `$ROOT/xproc-batch/README.md`.
+
+
+## Test Input File
+
+The test input file `input.xml` is this rather unimaginative file:
 
 ```
 <doc>
@@ -42,7 +57,7 @@ The output after four XSLT steps should look like this:
 
 ## Pipeline Manifest
 
-The pipeline manifest looks like this:
+The pipeline manifest in `pipelines/` looks like this:
 
 ```
 <manifest xmlns="http://www.corbas.co.uk/ns/transforms/data" xml:base=".">
@@ -69,7 +84,7 @@ You'll notice that two of the steps include `meta` elements. These describe inpu
 
 ## XSLT Steps
 
-The four XSLT step stylesheets are basically the same. Here's the first one:
+The four XSLT step stylesheets in `xslt/` are basically the same. Here's the first one:
 
 ```
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">

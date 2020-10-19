@@ -1,0 +1,3 @@
+[submodule "xproc-batch"]
+	path = xproc-batch
+	url = https://github.com/sgmlguru/xproc-batch
