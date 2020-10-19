@@ -1,0 +1,3 @@
+<!ELEMENT four  (#PCDATA | four)* >
+<!ATTLIST four  one CDATA #REQUIRED
+                three CDATA #REQUIRED >

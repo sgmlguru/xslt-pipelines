@@ -16,8 +16,8 @@ echo Converting and validating $PROJECT...
 	    output-base-uri=$PROJECT/tmp/out \
 	    reports-dir=$PROJECT/tmp/reports \
 	    tmp-dir=$PROJECT/tmp \
-	    doctype-system=SYSTEM-ID \
-	    doctype-public=PUBLIC-ID \
+	    doctype-system=test-output.dtd \
+	    doctype-public= \
 	    xspec-manifest-uri=$ROOT/PATH-TO-XSPEC-TEST-MANIFEST \
 	    verbose=$VERBOSE \
 	    debug=$DEBUG \
