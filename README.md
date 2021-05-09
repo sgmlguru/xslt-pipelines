@@ -2,7 +2,7 @@
 
 This repository contains a test pipeline for XSLT steps, meaning individual XSLT stylesheets (steps) and a manifest file that describes the order in which the steps run. It is intended only to test the [XProc batch](https://github.com/sgmlguru/xproc-batch) tools that in turn rely on Nic Gibson's [XProc Tools](https://github.com/Corbas/xproc-tools).
 
-**Now, you can also run the manifest in eXist-DB, without Nic's XProc Tools. See the XProc Batch repository's XQuery scripts.**
+**Now you can also run the manifest in eXist-DB, without Nic's XProc Tools. See the XProc Batch repository's XQuery scripts.**
 
 
 ## Contents
