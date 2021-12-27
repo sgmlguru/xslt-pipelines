@@ -10,6 +10,8 @@ This repository contains a test pipeline for XSLT steps, meaning individual XSLT
 * `sources/input.xml` is a single input test XML file
 * `xslt/` contains four XSLT steps
 * `pipelines/` contains a single XML manifest file that defines the test pipeline
+* `xspec/` contains an XSpec unit test
+* `tests/` contains an XSpec manifest file
 * `xproc-batch/` contains the XProc functionality needed to run the test pipeline; it is included here as a submodule
 * `sh/` contains an example shell script to run the test pipeline
 * `xmlcalabash-1.1.30-99/` contains the XML Calabash 1.1.30-99 XProc 1.0 processor; you're free to use a more recent version, of course, but keep in mind that currently, the XProc implementation requires using XML Calabash and XProc 1.0
