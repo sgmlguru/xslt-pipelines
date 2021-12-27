@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:description
+    xmlns:x="http://www.jenitennison.com/xslt/xspec"
+    stylesheet="../xslt/step1.xsl">
+    
+    <x:param name="param1" select="'foobar'"/>
+    
+    <x:scenario label="A section element">
+        <x:context mode="STEP-1">
+            <section>...</section>
+        </x:context>
+
+        <x:expect label="will be converted to a one element with a @one attribute">
+            <one one="foobar">...</one>
+        </x:expect>
+    </x:scenario>
+</x:description>

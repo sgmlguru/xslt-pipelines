@@ -2,14 +2,9 @@
 <?xml-model href="../xproc-batch/xspec-tools/rng/xspec-manifest.rnc" type="application/relax-ng-compact-syntax"?>
 <tests
     xmlns="http://www.sgmlguru.org/ns/xproc/steps"
-    manifest="../pipelines/db-cleanup-xslt-manifest.xml"
-    xml:base="../">
+    manifest="../pipelines/test-manifest.xml"
+    xml:base=".">
     
-    <group description="">
-        <test xslt="xslt/db-cleanup/remove-namespaces.xsl" xspec="xspec/db-cleanup/remove-namespaces.xspec" description="Just an ID transform"/>
-        
-    </group>
-    
-    
+    <test xslt="../xslt/step1.xsl" xspec="../xspec/step1.xspec" description="Just a test"/>
     
 </tests>
