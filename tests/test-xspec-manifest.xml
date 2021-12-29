@@ -5,6 +5,12 @@
     manifest="../pipelines/test-manifest.xml"
     xml:base=".">
     
-    <test xslt="../xslt/step1.xsl" xspec="../xspec/step1.xspec" description="Just a test"/>
+    <group>
+        <test xslt="../xslt/step1.xsl" xspec="../xspec/step1.xspec" description="Just a test"/>
+    </group>
+    
+    <group>
+        <test xslt="../xslt/step4.xsl" xspec="../xspec/step4.xspec" description="Another test to test tests"/>
+    </group>
     
 </tests>
