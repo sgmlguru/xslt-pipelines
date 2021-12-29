@@ -7,7 +7,7 @@ CALABASH=$ROOT/xmlcalabash-1.1.30-99
 echo Converting and validating $PROJECT...
 	    java \
 	    -classpath "$CALABASH/xmlcalabash-1.1.30-99.jar:$CALABASH/lib/Saxon-HE-9.9.1-5.jar:$CALABASH/lib/commons-logging-1.2.jar:$CALABASH/lib/httpclient-4.5.8.jar:$CALABASH/lib/commons-codec-1.11.jar:$CALABASH/lib/commons-io-2.2.jar" \
-	    -Dxml.catalog.files="$ROOT/catalogs/catalog.xml" \
+	    -Dxml.catalog.files="$ROOT/xproc-batch/catalogs/catalog.xml" \
 	    com.xmlcalabash.drivers.Main \
 	    --entity-resolver org.xmlresolver.Resolver \
 	    --input manifest=$ROOT/pipelines/test-manifest.xml \
@@ -18,7 +18,7 @@ echo Converting and validating $PROJECT...
 	    tmp-dir=$PROJECT/tmp \
 	    doctype-system=test-output.dtd \
 	    doctype-public= \
-	    xspec-manifest-uri=$ROOT/PATH-TO-XSPEC-TEST-MANIFEST \
+	    xspec-manifest-uri= \
 	    verbose=$VERBOSE \
 	    debug=$DEBUG \
 	    dtd-validate-input=false \
