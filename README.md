@@ -1,8 +1,8 @@
 # README
 
-This repository contains a test pipeline for XSLT steps, meaning individual XSLT stylesheets (steps) and a manifest file that describes the order in which the steps run. It is intended only to test the [XProc batch](https://github.com/sgmlguru/xproc-batch) tools that in turn rely on Nic Gibson's [XProc Tools](https://github.com/Corbas/xproc-tools).
+This repository contains a test pipeline for XSLT steps, meaning individual XSLT stylesheets (steps) and a manifest file that describes the order in which the steps run. It is intended only to test the [XProc batch, branch xproc3](https://github.com/sgmlguru/xproc-batch/tree/xproc3) tools that in turn rely on [my fork](https://github.com/sgmlguru/xproc-tools/tree/xproc3) of Nic Gibson's [XProc Tools](https://github.com/Corbas/xproc-tools).
 
-**Now you can also run the manifest in eXist-DB, without Nic's XProc Tools. See the XProc Batch repository's XQuery scripts.**
+You can also run the manifest in eXist-DB, without Nic's XProc Tools. See the XProc Batch repository's XQuery scripts.
 
 
 ## Contents
@@ -12,9 +12,16 @@ This repository contains a test pipeline for XSLT steps, meaning individual XSLT
 * `pipelines/` contains a single XML manifest file that defines the test pipeline
 * `xspec/` contains an XSpec unit test
 * `tests/` contains an XSpec manifest file
-* `xproc-batch/` contains the XProc functionality needed to run the test pipeline; it is included here as a submodule
-* `sh/` contains an example shell script to run the test pipeline
-* `xmlcalabash-1.1.30-99/` contains the XML Calabash 1.1.30-99 XProc 1.0 processor; you're free to use a more recent version, of course, but keep in mind that currently, the XProc implementation requires using XML Calabash and XProc 1.0
+* `sh/` contains a shell script to run the test pipeline
+
+
+## Setup
+
+1. Download and install [MorganaXProc-III](https://www.xml-project.com/morganaxproc-iii/).
+2. Clone [XProc Batch](https://github.com/sgmlguru/xproc-batch/tree/xproc3), branch xproc3.
+3. Clone this repository as a sibling folder to XProc Batch.
+4. Edit `sh/xslt-pipelines-3.sh` and the `MORGANA_HOME` variable to match your MorganaXProc-III location.
+
 
 
 ## Running
@@ -22,9 +29,9 @@ This repository contains a test pipeline for XSLT steps, meaning individual XSLT
 To run the test pipeline, open a command line and follow these steps:
 
 1. Enter `cd $ROOT` where `$ROOT` is the path to this repository on your system. Hit RETURN.
-2. Enter `sh/xslt-pipelines.sh $PROJECT true true` where `$PROJECT` contains a folder `sources` where your input XML files live. Hit RETURN. 
+2. Enter `sh sh/xslt-pipelines-3.sh -i $PROJECT -t $TMP` where `$PROJECT` points to the folder where your input XML files live and `$TMP` points at the target location for the results. For example: `sh sh/xslt-pipelines-3.sh -i file:/home/ari/Documents/repos/xslt-pipelines/sources/ -t file:/home/ari/Documents/repos/xslt-pipelines/tmp/`. Hit RETURN.
 
-NOTE: In this case, `$PROJECT` is the same as `$ROOT` since this repository contains an input test XML file.
+NOTE: The paths need to be absolute file URLs on Linux systems at the moment. Not sure why.
 
 The pipeline should run and create a `tmp` folder, inside which it should save the converted file, plus debug information. For details, see `$ROOT/xproc-batch/README.md`.
 
@@ -64,7 +71,7 @@ The pipeline manifest in `pipelines/` looks like this:
 ```
 <manifest xmlns="http://www.corbas.co.uk/ns/transforms/data" xml:base=".">
     
-    <group description="XLSX normalisation and cleanup steps" xml:base="../xslt/">
+    <group description="..." xml:base="../xslt/">
         <item href="step1.xsl" description="To element one">
             <meta name="param1" value="value1"/>
         </item>
