@@ -29,7 +29,7 @@ echo "Running" $PROGNAME
 echo "Input path" $input
 echo "Output base path" $output
 
-MORGANA_HOME=/home/ari/MorganaXProc-IIIse-0.9.16-beta
+MORGANA_HOME=/home/ari/MorganaXProc-IIIse-0.9.17-beta
 MORGANA_LIB=$MORGANA_HOME/MorganaXProc-IIIse_lib/*
 
 #Settings for JAVA_AGENT: Only for Java 8 we have to use -javaagent.
