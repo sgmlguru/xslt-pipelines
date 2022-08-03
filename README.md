@@ -33,7 +33,7 @@ To run the test pipeline, open a command line and follow these steps:
 
 NOTE: The paths need to be absolute file URLs on Linux systems at the moment. Not sure why.
 
-The pipeline should run and create a `tmp` folder, inside which it should save the converted file, plus debug information. For details, see `$ROOT/xproc-batch/README.md`.
+The pipeline creates a `tmp` folder, inside which it saves the converted file, plus debug information. For details, see the XProc Batch `README.md`.
 
 
 ## Test Input File
@@ -88,7 +88,7 @@ The pipeline manifest in `pipelines/` looks like this:
 
 The manifest validates against Nic's manifest Relax NG schema, found in his XProc Tools repository.
 
-You'll notice that two of the steps include `meta` elements. These describe input parameters to the respective XSLT steps. Why not call them 'param'? Ask Nic. Pretty sure he did think it through but I don't get it (which probably says more about me than him).
+You'll notice that two of the steps include `meta` elements. These describe input parameters to the respective XSLT steps.
 
 
 ## XSLT Steps
