@@ -2,7 +2,7 @@
 <?xml-model href="../../xproc-batch/xproc-tools/schemas/manifest.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <manifest xmlns="http://www.corbas.co.uk/ns/transforms/manifest" xml:base=".">
     
-    <group description="XLSX normalisation and cleanup steps" xml:base="../xslt/">
+    <group description="Test transform" xml:base="../xslt/">
         <item href="step1.xsl" description="To element one">
             <meta name="param1" value="value1"/>
         </item>
