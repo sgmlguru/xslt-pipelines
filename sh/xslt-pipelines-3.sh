@@ -29,7 +29,7 @@ echo "Running" $PROGNAME
 echo "Input path" $input
 echo "Output base path" $output
 
-MORGANA_HOME=/home/ari/MorganaXProc-IIIse-0.9.17-beta
+MORGANA_HOME=/home/ari/MorganaXProc-IIIse-0.9.16-beta
 MORGANA_LIB=$MORGANA_HOME/MorganaXProc-IIIse_lib/*
 
 #Settings for JAVA_AGENT: Only for Java 8 we have to use -javaagent.
@@ -39,7 +39,7 @@ JAVA_VER=$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)\.\(.*\)\..*".*/\1\
 
 if [ $JAVA_VER = "18" ]
 then
-	JAVA_AGENT=-javaagent:$MORGANA_HOME/MorganaXProc-IIIse_lib/quasar-core-0.7.9.jar
+  JAVA_AGENT=-javaagent:$MORGANA_HOME/MorganaXProc-IIIse_lib/quasar-core-0.7.9.jar
 fi
 
 # All related jars are expected to be in $MORGANA_LIB. For externals jars: Add them to $CLASSPATH
@@ -51,7 +51,7 @@ $JAVA_AGENT \
 -config=$MORGANA_HOME/config.xml \
 $ROOT/../xproc-batch/xproc/validate-convert.xpl \
 -catalogs=$ROOT/../xproc-batch/catalogs/catalog.xml \
--input:manifest=/home/ari/Documents/repos/xslt-pipelines/pipelines/test-manifest.xml \
+-input:manifest=$ROOT/pipelines/test-manifest.xml \
 -input:sch=$ROOT/sch/placeholder.sch \
 -option:input-base-uri=$input \
 -option:output-base-uri=$output/out \
