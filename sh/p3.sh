@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MORGANA_HOME=/home/ari/MorganaXProc-IIIse-0.9.16-beta
+MORGANA_HOME=/home/ari/MorganaXProc-IIIee-1.7.2
 MORGANA_LIB=$MORGANA_HOME/MorganaXProc-IIIse_lib/*
 
 #Settings for JAVA_AGENT: Only for Java 8 we have to use -javaagent.
@@ -10,19 +10,22 @@ JAVA_VER=$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)\.\(.*\)\..*".*/\1\
 
 if [ $JAVA_VER = "18" ]
 then
-	JAVA_AGENT=-javaagent:$MORGANA_HOME/MorganaXProc-IIIse_lib/quasar-core-0.7.9.jar
+	JAVA_AGENT=-javaagent:$MORGANA_HOME/MorganaXProc-IIIee_lib/quasar-core-0.7.9.jar
 fi
 
+# Saxon
+SAXON_HOME=/home/ari/.local/bin
+
 # All related jars are expected to be in $MORGANA_LIB. For externals jars: Add them to $CLASSPATH
-CLASSPATH=$MORGANA_LIB:$MORGANA_HOME/MorganaXProc-IIIse.jar
+CLASSPATH=$MORGANA_LIB:$MORGANA_HOME/MorganaXProc-IIIee.jar:$SAXON_HOME/saxon-he-12.9.jar
 
 java \
 $JAVA_AGENT \
 -cp $CLASSPATH com.xml_project.morganaxproc3.XProcEngine \
 -config=$MORGANA_HOME/config.xml \
-../xproc-batch/xproc/validate-convert.xpl \
--catalogs=../xproc-batch/catalogs/catalog.xml \
--input:manifest=./pipelines/test-manifest.xml \
+../../xproc-batch/xproc/validate-convert.xpl \
+-catalogs=../../xproc-batch/catalogs/catalog.xml \
+-input:manifest=../pipelines/test-manifest.xml \
 -input:sch=/home/ari/Documents/repos/xslt-pipelines/sch/placeholder.sch \
 -option:input-base-uri='/home/ari/Documents/repos/xslt-pipelines/sources' \
 -option:output-base-uri='/home/ari/Documents/repos/xslt-pipelines/tmp/out' \
