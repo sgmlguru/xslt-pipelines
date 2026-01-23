@@ -52,7 +52,7 @@ $JAVA_AGENT \
 -config=$MORGANA_HOME/config.xml \
 $ROOT/../xproc-batch/xproc/validate-convert.xpl \
 -catalogs=$ROOT/../xproc-batch/catalogs/catalog.xml \
--input:manifest=/home/ari/Documents/repos/xslt-pipelines/pipelines/test-manifest.xml \
+-input:manifest=$ROOT/pipelines/test-manifest.xml \
 -input:sch=$ROOT/sch/placeholder.sch \
 -option:input-base-uri=$input \
 -option:output-base-uri=$output/out \
